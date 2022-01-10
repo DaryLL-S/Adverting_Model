@@ -1,6 +1,9 @@
+import sys
 import numpy as np
 import pandas as pd
 import xgboost as xgb
+
+sys.path.append('..')
 from myW2V_model.main import main as W2V
 
 
