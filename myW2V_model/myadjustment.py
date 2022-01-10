@@ -21,4 +21,4 @@ def final_adjustment():
                               'marriage', 'region', 'risk_appetite', 'education', 'revenue', 'deposit', 'debt',
                               'intended_products', 'label'])
     a = a.sort_values(by="_key", ascending=True)  # 排序
-    a.to_csv("result/final_result.csv", index=False)
+    a.to_csv("./result/final_result.csv", index=False)
