@@ -31,7 +31,7 @@ def dataPrepos(text, stopkey):
 
 def builtmodel():
     sens_list = []
-    stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
+    stopkey = [w.strip() for w in codecs.open('./data/stopWord.txt', 'r', encoding='utf-8').readlines()]
     with open("./data/process.csv", "w", encoding='utf-8', newline='') as wf:
         writer = csv.DictWriter(wf, fieldnames=head)
         writer.writeheader()

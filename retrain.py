@@ -2,14 +2,13 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 
-
-import index
+from myW2V_model import index
 
 
 def main():
     index.main()
     # 导入数据集
-    df = pd.read_csv("../W2V_model/result/final_result.csv")
+    df = pd.read_csv("../myW2V_model/result/final_result.csv")
     df = df.fillna(value=-1)
     data = df.iloc[:, 3:16]
 
@@ -20,7 +19,7 @@ def main():
     yprob = np.argmax(y_pred, axis=1)  # return the index of the biggest pro
     predictions = [round(value) for value in yprob]
 
-    df2 = pd.read_csv("../W2V_model/result/final_result.csv")
+    df2 = pd.read_csv("../myW2V_model/result/final_result.csv")
     df2['label'] = predictions
     df2.to_csv("data/result_data.csv", index=False)
     df2.fillna(value=-1)

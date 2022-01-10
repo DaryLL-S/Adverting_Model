@@ -100,7 +100,7 @@ def word():
     data = pd.read_csv(dataFile)
 
     # 停用词表
-    stopkey = [w.strip() for w in codecs.open('data/stopWord.txt', 'r', encoding='utf-8').readlines()]
+    stopkey = [w.strip() for w in codecs.open('./data/stopWord.txt', 'r', encoding='utf-8').readlines()]
 
     # 词向量模型
     inp = 'result/model/fast_text_CBOW.vector'

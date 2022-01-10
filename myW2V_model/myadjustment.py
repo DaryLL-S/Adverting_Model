@@ -4,7 +4,7 @@ from gensim.models import FastText
 
 def final_adjustment():
     model = FastText.load("result/model/fast_text_CBOW.model")
-    data = pd.read_csv('result/keys_word2vec.csv')
+    data = pd.read_csv('./result/keys_word2vec.csv')
     keyList = data['keyword']
     resultList = []
     for i in keyList:
