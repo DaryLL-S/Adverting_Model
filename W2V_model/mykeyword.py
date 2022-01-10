@@ -111,6 +111,7 @@ def word():
 
     rootdir = "result/vecs"  # 词向量文件根目录
     fileList = os.listdir(rootdir)  # 列出文件夹下所有的目录与文件
+    fileList.sort(key=lambda x: int(x[9:-4]))
     # 遍历文件
     for i in range(len(fileList)):
         filename = fileList[i]
@@ -135,5 +136,10 @@ def word():
         columns=['_key', 'username', 'location', 'postcount', 'likes', 'keyword', 'gender',
                  'identity', 'marriage', 'region', 'risk_appetite', 'education', 'revenue',
                  'deposit', 'debt', 'intended_products', 'label'])
-    result = result.sort_values(by="_key", ascending=True)  # 排序
+    print(uids)
+    result = result.sort_values('_key')  # 排序
     result.to_csv("result/keys_word2vec.csv", index=False)
+
+
+if __name__ == '__main__':
+    word()
