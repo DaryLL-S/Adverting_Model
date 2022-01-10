@@ -47,6 +47,6 @@ def builtmodel():
                 sens_list.append(result)
 
     logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
-    model = fasttext.FastText(sens_list, min_count=1, sg=0)
+    model = fasttext.FastText(sens_list, min_count=1, sg=0, vector_size=60)
     model.save("./result/model/fast_text_CBOW.model")
     model.wv.save_word2vec_format("./result/model/fast_text_CBOW.vector")
