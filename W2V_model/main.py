@@ -3,7 +3,8 @@ import getinfo
 import mykeyword
 import model
 
-if __name__ == '__main__':
+
+def main():
     collection = getinfo.connect_mongo()
     getinfo.userinfo(collection)
     getinfo.merge_data()
