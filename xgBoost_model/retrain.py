@@ -1,11 +1,11 @@
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-import W2V_model.main
+from W2V_model.main import main as W2V
 
 
 def main():
-    W2V_model.main.main()
+    W2V()
     # 导入数据集
     df = pd.read_csv("../W2V_model/result/final_result.csv")
     df = df.fillna(value=-1)
