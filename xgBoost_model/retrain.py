@@ -1,14 +1,13 @@
-import sys
 import numpy as np
 import pandas as pd
 import xgboost as xgb
 
-sys.path.append('..')
-from myW2V_model.main import main as W2V
+
+import myW2V_model.index
 
 
 def main():
-    W2V()
+    myW2V_model.index.main()
     # 导入数据集
     df = pd.read_csv("../W2V_model/result/final_result.csv")
     df = df.fillna(value=-1)
