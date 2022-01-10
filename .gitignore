@@ -1,0 +1,5 @@
+# .gitignore
+
+*.model
+*.npy
+*.vector

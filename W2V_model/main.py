@@ -12,3 +12,7 @@ def main():
     model.builtmodel()
     mykeyword.word()
     adjustment.final_adjustment()
+
+
+if __name__ == '__main__':
+    main()
