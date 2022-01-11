@@ -1,7 +1,5 @@
 import pandas as pd
 import xgboost as xgb
-from matplotlib import pyplot as plt
-from xgboost import plot_importance
 
 # 导入数据集
 df = pd.read_csv("./data/raw_data.csv")
@@ -14,7 +12,7 @@ print(target)
 
 # booster:
 params = {'learning_rate': 0.4,
-          'max_depth': 20,  # 构建树的深度，越大越容易过拟合
+          'max_depth': 10,  # 构建树的深度，越大越容易过拟合
           'num_boost_round': 2000,
           'objective': 'multi:softprob',  # 多分类的问题
           'random_state': 7,
@@ -24,7 +22,3 @@ params = {'learning_rate': 0.4,
 
 model = xgb.train(params, xgb.DMatrix(data, target))
 model.save_model('XGboost.model')
-
-# 显示重要特征
-plot_importance(model)
-plt.show()

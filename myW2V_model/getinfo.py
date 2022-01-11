@@ -40,6 +40,7 @@ def userinfo(collection):
                 {'_key': temp['_key'], 'username': temp['username'], 'location': temp['location'],
                  'postcount': temp['postcount'], 'likes': temp['likes'], 'post': temp['post']})
 
+
 def merge_data():
     with open("./data/full_data.csv", 'w', encoding='utf-8', newline='') as wf:
         i = 0
